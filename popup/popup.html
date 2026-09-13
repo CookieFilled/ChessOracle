@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="head">
+      <div class="logo"><svg viewBox="0 0 24 24" fill="none"><path d="M6 21c.6-2.6 1-4.4 1.2-5.4C5.4 14.2 4.6 12 4.6 9.6c0-3.5 2-6.1 5.2-6.1 2.6 0 4.1 1.7 4.1 4 0 1.5-.6 2.7-1.6 3.6.5.3 1.1.4 1.7.2 1-.3 1.9-1 2.5-2.1.9 1.2 1.4 2.6 1.4 4.1 0 4.2-3.4 7.2-8.2 7.2-.9 0-1.7-.1-2.4-.3L6 21z" fill="#fff"/><circle cx="13.2" cy="7.3" r="1.05" fill="#7c5cff"/></svg></div>
+      <div class="t">
+        <b>ChessOracle</b>
+        <span id="subtitle">checking active tab…</span>
+      </div>
+      <span class="dot" id="dot"></span>
+    </div>
+
+    <div class="card" id="quick">
+      <div class="row">
+        <div class="lab">Autopilot <span class="hint">hands-free games</span></div>
+        <label class="switch"><input type="checkbox" id="apOn"><span class="tr"></span></label>
+      </div>
+      <div class="seg-row" id="apModeRow">
+        <button data-v="mixed" title="wins some, loses some — looks human">Mixed</button>
+        <button data-v="win" title="plans to win every game">Win all</button>
+        <button data-v="lose" title="plans to lose every game">Lose all</button>
+      </div>
+      <div class="row small-row" id="apStatusRow">
+        <span id="apStatus">—</span>
+      </div>
+      <div class="row">
+        <div class="lab">Autoplay <span class="hint" id="autoHint">plays as you</span></div>
+        <label class="switch"><input type="checkbox" id="autoOn"><span class="tr"></span></label>
+      </div>
+      <div class="srow">
+        <div class="stop"><span class="lab">Elo</span><span class="val" id="eloVal">1200</span></div>
+        <input type="range" id="elo" min="400" max="2900" step="25" value="1200">
+      </div>
+      <div class="row small-row" id="statusRow">
+        <span id="statusTxt">—</span>
+      </div>
+      <button class="btn" id="openPanel">Open panel on this page</button>
+    </div>
+
+    <div class="card" id="live">
+      <div class="sec">Live analysis</div>
+      <div id="liveBody" class="liveBody">—</div>
+    </div>
+
+    <div class="foot">local Stockfish · <span class="warn">engine use in rated games violates site ToS</span></div>
+  </div>
+  <script src="../lib/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
